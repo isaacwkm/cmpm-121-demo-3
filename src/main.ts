@@ -13,6 +13,7 @@ app.append(header);
 const button = document.createElement("button");
 button.innerHTML = "Click Me!";
 button.addEventListener("click", () => {
-  alert("you clicked the button!");
+    alert("you clicked the button!");
 });
+
 app.append(button);
