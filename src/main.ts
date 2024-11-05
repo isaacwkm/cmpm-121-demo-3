@@ -1,19 +1,53 @@
 import "./style.css";
 
-const app: HTMLDivElement = document.querySelector("#app")!;
+const APP_NAME = "Demo 3 hello";
+const app = document.querySelector<HTMLDivElement>("#app")!;
 
-const gameName = "Demo 3";
+document.title = APP_NAME;
 
-document.title = gameName;
+// Creating Game title
+const title = document.createElement("h1");
+setTitle();
 
-const header = document.createElement("h1");
-header.innerHTML = gameName;
-app.append(header);
+// Append title to the app container
+app.appendChild(title);
 
+// Make "clear" button
 const button = document.createElement("button");
-button.innerHTML = "Click Me!";
-button.addEventListener("click", () => {
+createButton();
+
+// Add an event listener for the click event
+button.addEventListener("click", function () {
+  // Code to execute when button is clicked
   alert("you clicked the button!");
 });
 
-app.append(button);
+// Functions below
+
+function setTitle() {
+  title.textContent = APP_NAME;
+  title.style.textAlign = "center";
+  title.style.marginTop = "10px";
+}
+
+function createButton() {
+  // Declare new button
+  button.id = "myButton"; // Set an ID for the button
+  button.textContent = "Click me!";
+
+  // Setting the location of the button
+  setLocation();
+
+  // Append the button to the body or another existing element
+  app.append(button);
+
+  return;
+
+  //// End of function
+
+  function setLocation() {
+    button.style.color = "white";
+    button.style.marginTop = "0px";
+    button.style.marginLeft = "0px";
+  }
+}
